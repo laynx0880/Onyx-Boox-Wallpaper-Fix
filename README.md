@@ -14,7 +14,7 @@ A lightweight PowerShell automation script that forces Onyx Boox e-readers to st
 2. Connect your Boox to your Windows PC via a stable USB cable.
 3. Your custom screensaver artwork must be placed inside the device's internal storage folder under `Pictures\Screensaver`. (When connected to a PC, this shows up inside your Boox device's main drive space under the `Pictures` folder. The script will automatically create the `Screensaver` directory if it does not exist).
 4. Ensure you have `adb.exe` installed on your PC. If you do not have it, you can get the official standalone binaries directly from the official [Google Android SDK Platform Tools Download Page](https://developer.android.com/tools/releases/platform-tools). 
-   * Windows Users can download the zip payload instantly via this [Direct Google Download Link](https://dl.google.com/android/repository/platform-tools-latest-windows.zip). Extract the folder directly to `C:\platform-tools\`.   do nto extract to the default location as they may make the adb database hidden from this script.
+   * Windows Users can download the zip payload instantly via this [Direct Google Download Link](https://dl.google.com/android/repository/platform-tools-latest-windows.zip). Extract the folder directly to `C:\platform-tools\`.   do not extract to the default location as that may make the adb database hidden from this script.
 
 
 ## How to Use
