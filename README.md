@@ -18,9 +18,11 @@ A lightweight PowerShell automation script that forces Onyx Boox e-readers to st
 
 
 ## How to Use
-1. Download `generalbooxscreensaverfix.ps1` from this repository.
-2. Right-click the script file on your computer and select **Run with PowerShell**.
-3. Follow the on-screen terminal text. Once finished, tap your Boox power button twice to sleep/wake the screen and verify the results.
+1. Download `generalbooxscreensaverfix.ps1` from this repository. 
+2. run powershell as administrator - run the program `generalbooxscreensaverfix.ps1`.
+   you can type powershell into the windows search bar and click run as admin.  then right click the script and "copy as path"-- using that info you can use the run command "&" and the path like thus-- & "C:\tools\platform-tools\generalbooxscreensaverfix.ps1"  --
+   if the window will not allow you to run scripts you can use --   powershell -ExecutionPolicy Bypass -File "C:\tools\platform-tools\generalbooxscreensaverfix.ps1"      -- where the copy as path should be substituted for where your scrript is actually located.
+4. Follow the on-screen terminal text. Once finished, tap your Boox power button twice to sleep/wake the screen and verify the results.
 
 ## Note on Low Battery
 If your Boox device battery falls below 15-20%, Android's internal power-saving framework may temporarily discard custom configuration paths to save RAM. If default images suddenly return after a low-battery event, simply charge your device and if that alone does not fix the issue then re-run this script again to lock your custom images back in place.
