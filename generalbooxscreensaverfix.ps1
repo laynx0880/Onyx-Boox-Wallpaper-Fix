@@ -44,7 +44,7 @@ if (Get-Command adb -ErrorAction SilentlyContinue) {
 if (-not $AdbPath) {
     Stop-Script `
         -ErrorMessage "adb.exe could not be found automatically." `
-        -Suggestion "Please place your platform-tools folder in C:\tools\ or add it to your Windows System PATH."
+        -Suggestion "Please place your adb.exe in C:\tools\platform-tools folder or add it to your Windows System PATH."
 }
 Write-Host "--> Found active ADB environment at: $AdbPath" -ForegroundColor Gray
 
@@ -56,7 +56,7 @@ $Devices = & $AdbPath devices | Where-Object { $_ -match '\bdevice\b' }
 if ($Devices.Count -eq 0) {
     Stop-Script `
         -ErrorMessage "No responsive Android devices detected." `
-        -Suggestion "Please ensure USB Debugging is enabled on your Boox and the cable is connected securely."
+        -Suggestion "Please ensure USB Debugging is enabled on your Boox (drop down notification) and the cable is connected securely."
 }
 Write-Host "--> Active Boox device detected successfully." -ForegroundColor Green
 
@@ -72,7 +72,7 @@ $RawImages = & $AdbPath shell ls "$DeviceUserPath/*.png" "$DeviceUserPath/*.jpg"
 if (-not $RawImages) {
     Stop-Script `
         -ErrorMessage "No custom artwork (.png/.jpg) found at $DeviceUserPath" `
-        -Suggestion "Please copy your custom screensaver images to that device folder and re-run this script."
+        -Suggestion "Please copy your custom screensaver images to that device folder (/sdcard/Pictures/Screensaver) on your boox and re-run this script."
 }
 
 $CleanedPaths = $RawImages | ForEach-Object { $_.Trim() } | Where-Object { $_ -ne "" }
